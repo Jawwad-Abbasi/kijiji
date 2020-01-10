@@ -1,0 +1,393 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #f8f9f9; 
+}
+
+button {
+  border: none;
+}
+
+::placeholder {
+  color: #3e4153;
+  font-weight: bold;
+  opacity: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  display: grid;
+  max-width: 100vw;
+  min-height: 100vh;
+  grid-template-columns: 50px 300px 1fr 1fr 50px;
+  grid-template-rows: 80px 180px 200px 1fr 200px 500px;
+  grid-template-areas:
+      "header header header header header"
+      ". found found found ."
+      ". sidebar content-1 content-1 ."
+      ". sidebar content-1 content-1 ."
+      ". . . . ."
+      "footer footer footer footer footer";
+}
+
+.headerWrapper {
+  grid-area: header;
+}
+
+.found {
+  grid-area: found;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content-1 {
+  grid-area: content-1;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+
+/* START OF STYLYING HEADER */
+
+.header {
+  display: inline-grid;
+  height: 70px;
+  background-color: white;
+  grid-template-columns: 1fr 6fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "image searchbar lang login button"
+}
+
+
+.headerWrapper {
+  border-top: 5px solid #373373;
+
+}
+
+.image {
+  grid-area: image;
+}
+
+.logo img {
+  
+  width: 50%;
+  height: 50%;
+
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.searchContainer {
+  grid-area: searchbar;
+  display: flex;
+}
+
+
+
+.searchCommon {
+  border: 1px solid #d2d3d7;
+  box-shadow: 0px 1px #d2d3d7;
+  margin: auto 0 auto 0;
+  outline: none;
+  padding: 20px;
+  font-weight: bold;
+}
+
+
+#searchKeyword {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  width: 50%;
+  height: 70%;
+  color: black;
+  
+
+}
+
+#categoriesKeyword {
+  width: 20%;
+  height: 70%;
+  border-left: 0px;
+  color: #3e4153;
+
+}
+
+#locationKeyword {
+  width: 20%;
+  height: 70%;
+  border-left: 0px;
+  color: #3e4153;
+
+}
+
+
+#button {
+  border-left: 0px;
+  background-color: #f8f9f9;
+  width: 8%;
+  height: 70%;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 0;
+
+}
+
+
+
+.lang a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #373373;
+
+}
+
+.lang a:hover {
+  text-decoration: underline;
+}
+
+
+
+.login p {
+  margin: 0 3px;
+}
+
+
+.login a {
+  text-decoration: none;
+  color: #2681db;
+  font-weight: 700;
+}
+
+.login a:hover {
+  text-decoration: underline;
+}
+
+.postad button {
+  background-color: #373373;
+  color: white;
+  font-weight: 700;
+  height: 60%;
+  width: 60%;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px 0 rgba(55,51,115,.3);
+}
+
+/* End of Styling Header */
+
+
+
+.sidebar {
+  border: 1px solid black;
+}
+
+.content-1 {
+}
+
+.footer {
+  border: 1px solid black;
+  background-color: white;
+ }
+
+
+
+
+
+
+
+ /* START OF FOUND STYLING */ 
+
+.found {
+  display: grid;
+  background-color: inherit;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 25% 25% 15% 35%;
+  grid-template-areas:
+    "directory . "
+    "show Nresults"
+    "line line"
+    "match .";
+}
+
+
+
+.found .directory {
+  margin-top: 10px;
+  grid-area: directory;
+}
+
+.found .directory p,a {
+  display: inline;
+
+}
+
+.found .directory p {
+  font-size: 10px;
+}
+
+.found .directory a {
+  color: #3e4153;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.found .directory a:hover {
+  text-decoration: underline;
+  color: #2681db;
+}
+
+.found .show {
+  display: grid;
+  grid-area: show;
+  align-self: end;
+}
+.found .show h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #3e4153;
+
+}
+
+.found .Nresults {
+  grid-area: Nresults;
+  display: grid;
+  align-self: end;
+  text-align: right;
+}
+
+.found .Nresults p {
+  font-size: 18px;
+  color: #3e4153;
+}
+
+.found .line {
+  display: grid;
+  grid-area: line;
+  align-self: center;
+}
+
+.found .line hr {
+  border: none;
+  height: 1px;
+  background-color: #d2d3d7;
+}
+
+.found .match {
+  grid-area: match;
+  margin-top: -10px;
+  /*display: grid;*/
+  align-self: center;
+}
+
+.found .match p, label {
+  float:left;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+  align-items: center;
+  color:#3e4153;
+}
+
+.found .match label {
+  margin-left: 10px;
+  padding: 12px 20px;
+}
+
+.found .match p {
+  border: 1px solid #d2d3d7;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 12px 20px;
+
+}
+
+ /* END OF FOUND STYLING */ 
+
+
+/* START OF SIDEBAR STYLING */
+.sidebar {
+  border: 1px solid #f1f1f2;
+  background-color: #fff;
+  margin-right: 10px;
+}
+
+.sidebar .sideHeading {
+  padding: 20px 0px 0px 20px;
+}
+
+.sidebar .heading ,.number {
+  display: inline-block;
+}
+
+.sidebar .heading {
+  line-height: 1.6em;
+  color: #373373;
+  font-size: 15px;
+}
+
+.sidebar .number {
+  font-weight: 400;
+  color: #373373;
+  font-size: 11px;
+}
+
+.sidebar .line {
+  border-bottom: 1px solid #d2d3d7;
+  padding: 0;
+}
+
+.sidebar .headName {
+  line-height: 1.6em;
+  color:#8e909b;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 15px 0 8px 30px;
+}
+
+.sidebar .links {
+   margin: 10px 0 8px 30px;
+}
+
+.sidebar .links li {
+  margin-top: 4px;
+}
+
+.sidebar .links a {
+  color: #3e4153;
+}
+
+.sidebar .links a:hover {
+  color: #2681db;
+}
+
+.sidebar .links .highlight {
+  border: 1px solid #cacaea;
+  border-radius: 4px;
+  margin-left: -15px;
+  padding: 5px 0px 5px 15px;
+  background-color: #eaeaea;
+
+  color: #373373;
+  line-height: 1.6em;
+  font-weight: 700;
+}
